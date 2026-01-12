@@ -1,8 +1,8 @@
 // ===== EDITAR (datos reales) =====
 // WhatsApp: sin + ni espacios. Ejemplo Bariloche: 5492941234567
-const WHATSAPP_NUM = "91168756718";
-const WA_LABEL = "+54 9 11 6875-6718";
-const TEL_LABEL = "+54 9 11 6875-6718";
+const WHATSAPP_NUM = "2944535384";
+const WA_LABEL = "+54 294-4535384";
+const TEL_LABEL = "+54 294-4535384";
 const ZONA = "Bariloche - Dina Huapi";
 const HORARIOS = "A coordinar";
 const EMAIL_TO = "contacto@sapher.com.ar";

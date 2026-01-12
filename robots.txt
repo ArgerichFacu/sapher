@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Enlace al sitemap XML
-Sitemap: https://saphersas.com.ar/sitemap.xml
+Sitemap: https://sapher.com.ar/sitemap.xml

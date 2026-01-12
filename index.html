@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SAPHER | Paramédicos y Ambulancia</title>
+  <title>SAPHER | Servicio de Atención Pre-Hospitalaria de Emergencias y Rescate</title>
 
   <meta name="description" content="SAPHER ofrece asistencia médica con paramédicos capacitados, 
   ambulancia disponible, traslados, cobertura de eventos y atención prehospitalaria.">
   <meta name="keywords" content="ambulancia, paramédicos, bariloche, emergencia, traslado, eventos, preventiva, SAPHER, servicio médico, atención prehospitalaria">
   <meta name="author" content="Facundo Argerich">
 
-  <meta property="og:title" content="SAPHER | Paramédicos y Ambulancia">
+  <meta property="og:title" content="SAPHER | Servicio de Atención Pre-Hospitalaria de Emergencias y Rescate">
   <meta property="og:description" content="Atención rápida y segura. Paramédicos con respaldo y ambulancia disponible en Bariloche.">
   <meta property="og:image" content="https://sapher.com.ar/images/logo-full.jpg">
   <meta property="og:url" content="https://sapher.com.ar">
@@ -48,8 +48,8 @@
             <img src="images/logo-basic.png" alt="SAPHER"/>
         </div>
         <div class="brandText">
-          <div class="brandName">SAPHER S.A.S</div>
-          <div class="brandSub">Paramédicos & Ambulancia</div>
+          <div class="brandName">SAPHER</div>
+          <div class="brandSub">Servicio de Atención Pre-Hospitalaria <br>de Emergencias y Rescate<br/></div>
         </div>
       </a>
 
@@ -70,7 +70,7 @@
       <div class="wrap grid">
         <div class="card heroCard">
           <span class="badge">🚑 Ambulancia disponible • Atención prehospitalaria</span>
-          <h1>Atención rápida y segura.<br />Paramédicos con respaldo.</h1>
+          <h1>Atención rápida y segura.<!--<br />Paramédicos con respaldo.--></h1>
 
           <p>
             SAPHER brinda asistencia con personal capacitado y ambulancia disponible para
@@ -193,7 +193,8 @@
             <p>Salida de la unidad y atención según el caso. Coordinación hasta finalizar el servicio.</p>
           </article>
         </div>
-
+        
+        <!--
         <div class="cta">
           <div>
             <div class="ctaTitle">¿Querés coordinar un servicio?</div>
@@ -205,6 +206,8 @@
             <a class="btn primary" href="#contacto">Dejar consulta</a>
           </div>
         </div>
+        -->
+
       </div>
     </section>
 
@@ -215,55 +218,49 @@
         </div>
 
         <div class="cols3">
+          <!-- WhatsApp -->
           <article class="service">
-            <div class="icon green">📱</div>
-            <h3>WhatsApp</h3>
-            <p><b id="waLabel">+54 9 294 000-0000</b><br />Respuesta rápida para coordinación.</p>
-          </article>
-
-          <article class="service">
-            <div class="icon">☎️</div>
-            <h3>Teléfono</h3>
-            <p><b id="telLabel">+54 294 000-0000</b><br />Llamadas para urgencias y traslados.</p>
-          </article>
-
-          <article class="service">
-            <div class="icon green">📍</div>
-            <h3>Zona</h3>
-            <p><b id="zonaLabel">Bariloche y alrededores</b><br />Consultá disponibilidad según ubicación.</p>
-          </article>
-        </div>
-        
-        <div class="card formCard">
-            <h3 class="formTitle">Enviar por email</h3>
-            <p class="fine">Completá los datos y se abrirá tu correo con el mensaje listo.</p>
-        
-            <div class="quickForm emailForm">
-              <div class="data">
-                <label>
-                  Nombre
-                  <input id="eName" type="text" placeholder="Tu nombre" />
-                </label>
-            
-                <label>
-                  Teléfono
-                  <input id="ePhone" type="text" placeholder="+54..." />
-                </label>
-            
-                <label>
-                  Asunto
-                  <input id="eSubject" type="text" placeholder="Consulta / Presupuesto / Cobertura" />
-                </label>
-            
-                <a class="btn primary" id="btnEmail" href="#">Enviar email</a>
+            <div class="contact-card">
+              <a href="https://wa.me/542944533584" target="_blank" class="contact-btn">
+                <div class="contact-icon">📱</div>
+                <div class="contact-info">
+                  <h3>WhatsApp</h3>
+                  <p><strong>+54 294-4535384</strong></p>
+                  <p>Respuesta rápida para coordinación.</p>
                 </div>
-            
-                <label class="messageBox">
-                  Mensaje
-                  <textarea id="eMsg" placeholder="Contanos qué necesitás"></textarea>
-                </label>
+              </a>
             </div>
+          </article>
+        
+          <!-- Teléfono -->
+          <article class="service">
+            <div class="contact-card">
+              <div class="contact-static">
+                <div class="contact-icon">☎️</div>
+                <div class="contact-info">
+                  <h3>Teléfono</h3>
+                  <p><strong>+54 294 453-5384</strong></p>
+                  <p>Llamadas para urgencias y traslados.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        
+          <!-- Zona -->
+          <article class="service">
+            <div class="contact-card">
+              <div class="contact-static">
+                <div class="contact-icon">📍</div>
+                <div class="contact-info">
+                  <h3>Zona</h3>
+                  <p><strong>Bariloche - Dina Huapi</strong></p>
+                  <p>Consultá disponibilidad según ubicación.</p>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
+
 
         <div class="card formCard">
           <h3 class="formTitle">Mensaje rápido</h3>
