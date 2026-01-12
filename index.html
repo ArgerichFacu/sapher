@@ -12,10 +12,11 @@
 
   <meta property="og:title" content="SAPHER | Servicio de Atención Pre-Hospitalaria de Emergencias y Rescate">
   <meta property="og:description" content="Atención rápida y segura. Paramédicos con respaldo y ambulancia disponible en Bariloche.">
-  <meta property="og:image" content="https://sapher.com.ar/images/logo-full.jpg">
+  <meta property="og:image" content="https://sapher.com.ar/images/logos/logo-full.jpg">
   <meta property="og:url" content="https://sapher.com.ar">
   <meta property="og:type" content="website">
-
+  <meta name="description" content="SAPHER ofrece atención médica con paramédicos profesionales, traslados, cobertura de eventos y servicio de ambulancia en Bariloche y Dina Huapi.">
+  <meta name="robots" content="index, follow">
 
   <script type="application/ld+json">
   {
@@ -23,7 +24,7 @@
     "@type": "MedicalOrganization",
     "name": "SAPHER",
     "url": "https://sapher.com.ar",
-    "logo": "https://sapher.com.ar/images/logo-basic.png",
+    "logo": "https://sapher.com.ar/image/logos/logo-basic.png",
     "address": {
     "@type": "PostalAddress",
     "streetAddress": "Calle Ejemplo 123",
@@ -36,8 +37,82 @@
   }
   </script>
 
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll(".slide");
+  const sliderContainer = document.querySelector(".slider-container");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+  const dotsContainer = document.querySelector(".dots");
+  let currentIndex = 0;
+  let interval;
+
+  // Crear puntos dinámicamente
+  slides.forEach((_, i) => {
+    const dot = document.createElement("span");
+    if (i === 0) dot.classList.add("active");
+    dotsContainer.appendChild(dot);
+  });
+  const dots = document.querySelectorAll(".dots span");
+
+  // 🔹 Función para actualizar la posición del slider
+  function updateSlider() {
+    sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+    dots.forEach((dot, i) => dot.classList.toggle("active", i === currentIndex));
+  }
+
+  // 🔹 Funciones para botones
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    updateSlider();
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    updateSlider();
+  }
+
+  // 🔹 Agregar listeners a los botones
+  nextBtn.addEventListener("click", () => {
+    nextSlide();
+    resetInterval(); // reinicia el temporizador cuando el usuario hace clic
+  });
+
+  prevBtn.addEventListener("click", () => {
+    prevSlide();
+    resetInterval();
+  });
+
+  // 🔹 Listeners para los puntos
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      currentIndex = i;
+      updateSlider();
+      resetInterval();
+    });
+  });
+
+  // 🔹 Auto-slide cada 5 segundos
+  function startAutoSlide() {
+    interval = setInterval(nextSlide, 5000);
+  }
+
+  function resetInterval() {
+    clearInterval(interval);
+    startAutoSlide();
+  }
+
+  // 🔹 Iniciar
+  updateSlider();
+  startAutoSlide();
+});
+</script>
+
+
+
   <link rel="stylesheet" href="styles.css"/>
-  <link rel="icon" href="images/logo-icon.png">
+  <link rel="icon" href="images/logos/logo-icon.png">
+  <link rel="canonical" href="https://sapher.com.ar/">
 </head>
 
 <body data-theme="dark">
@@ -45,7 +120,7 @@
     <div class="wrap nav">
       <a class="brand" href="#">
         <div class="logo">
-            <img src="images/logo-basic.png" alt="SAPHER"/>
+            <img src="images/logos/logo-basic.png" alt="SAPHER"/>
         </div>
         <div class="brandText">
           <div class="brandName">SAPHER</div>
@@ -70,7 +145,7 @@
       <div class="wrap grid">
         <div class="card heroCard">
           <span class="badge">🚑 Ambulancia disponible • Atención prehospitalaria</span>
-          <h1>Atención rápida y segura.<!--<br />Paramédicos con respaldo.--></h1>
+          <h1>Atención rápida y segura.</h1>
 
           <p>
             SAPHER brinda asistencia con personal capacitado y ambulancia disponible para
@@ -120,6 +195,19 @@
       </div>
     </section>
 
+    <section class="slider">
+      <div class="slider-container">
+        <div class="slide"><img src="images/deslizable/1.png" alt="Ambulancia SAPHER en acción"></div>
+        <div class="slide"><img src="images/deslizable/2.png" alt="Equipo médico SAPHER"></div>
+        <div class="slide"><img src="images/deslizable/3.png" alt="Unidad móvil SAPHER"></div>
+      </div>
+    
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    
+      <div class="dots"></div>
+    </section>
+
     <section id="servicios" class="section">
       <div class="wrap">
         <div class="sectionTitle">
@@ -141,7 +229,7 @@
           </article>
 
           <article class="service">
-            <div class="icon">🎫</div>
+            <div class="icon">⛑️</div>
             <h3>Cobertura de eventos</h3>
             <p>Presencia preventiva en eventos deportivos, culturales y corporativos con protocolo de actuación.</p>
           </article>
@@ -153,15 +241,15 @@
           </article>
 
           <article class="service">
-            <div class="icon">🧰</div>
-            <h3>Preventiva y guardias</h3>
-            <p>Dispositivo de salud preventiva para actividades de riesgo o grandes concurrencias.</p>
+            <div class="icon">⚡</div>
+            <h3>Cobertura Cardio Protegida</h3>
+            <p>Instalación y mantenimiento de zonas cardio protegidas con desfibriladores DEA y personal capacitado para emergencias.</p>
           </article>
 
           <article class="service">
-            <div class="icon green">📞</div>
-            <h3>Coordinación simple</h3>
-            <p>Canales directos, confirmación y seguimiento. Menos vueltas, más claridad.</p>
+            <div class="icon green">📖</div>
+            <h3>Cursos</h3>
+            <p>Capacitaciones en RCP, uso de DEA y primeros auxilios. Formación práctica para empresas, escuelas y público general.</p>
           </article>
         </div>
       </div>
@@ -193,21 +281,6 @@
             <p>Salida de la unidad y atención según el caso. Coordinación hasta finalizar el servicio.</p>
           </article>
         </div>
-        
-        <!--
-        <div class="cta">
-          <div>
-            <div class="ctaTitle">¿Querés coordinar un servicio?</div>
-            <div class="fine">Respondemos por WhatsApp y te confirmamos disponibilidad.</div>
-          </div>
-
-          <div class="row">
-            <a class="btn green" id="btnWhatsApp2" href="#" target="_blank" rel="noopener">Escribir por WhatsApp</a>
-            <a class="btn primary" href="#contacto">Dejar consulta</a>
-          </div>
-        </div>
-        -->
-
       </div>
     </section>
 
@@ -218,7 +291,6 @@
         </div>
 
         <div class="cols3">
-          <!-- WhatsApp -->
           <article class="service">
             <div class="contact-card">
               <a href="https://wa.me/542944533584" target="_blank" class="contact-btn">
@@ -232,7 +304,6 @@
             </div>
           </article>
         
-          <!-- Teléfono -->
           <article class="service">
             <div class="contact-card">
               <div class="contact-static">
@@ -246,7 +317,6 @@
             </div>
           </article>
         
-          <!-- Zona -->
           <article class="service">
             <div class="contact-card">
               <div class="contact-static">

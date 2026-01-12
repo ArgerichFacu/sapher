@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Enlace al sitemap XML
 Sitemap: https://sapher.com.ar/sitemap.xml
