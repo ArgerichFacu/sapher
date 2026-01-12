@@ -101,7 +101,8 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
         <div class="brandText">
           <div class="brandName">SAPHER</div>
-          <div class="brandSub">Servicio de Atención Pre-Hospitalaria <br>de Emergencias y Rescate<br/></div>
+            <div class="brandSub">Servicio de Atención Pre-Hospitalaria <br>de Emergencias y Rescate<br/>
+          </div>
         </div>
       </a>
 
@@ -150,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           <div class="stat">
             <b>Coordinación</b>
-            <span>Respuesta por WhatsApp/llamada y confirmación de salida</span>
+            <span>Respuesta por WhatsApp/llamada/Mail y confirmación de salida</span>
           </div>
 
           <div class="stat">
@@ -244,7 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <article class="service">
             <div class="icon">1</div>
             <h3>Contacto</h3>
-            <p>Escribís por WhatsApp o llamás. Nos pasás ubicación, motivo y datos básicos.</p>
+            <p>Escribís por WhatsApp, Mail o llamás. Nos pasás ubicación, motivo y datos básicos.</p>
           </article>
 
           <article class="service">
@@ -263,104 +264,143 @@ document.addEventListener("DOMContentLoaded", () => {
     </section>
 
     <section id="contacto" class="section">
-      <div class="wrap">
-        <div class="sectionTitle">
-          <h2>Contacto</h2>
+  <div class="wrap">
+    <div class="sectionTitle">
+      <h2>Contacto</h2>
+      <div class="fine">Comunicate con nosotros por correo o WhatsApp.</div>
+    </div>
+
+    <div class="cols3">
+      <article class="service">
+        <div class="inner-card">
+          <a href="https://wa.me/5492944535384" target="_blank" class="whatsapp-btn">
+            <div class="contact-icon">
+              📱
+            </div>
+            <div class="contact-info">
+              <h3>WhatsApp</h3>
+              <p><strong>+54 294-4535384</strong></p>
+              <p>Respuesta rápida para coordinación.</p>
+            </div>
+          </a>
         </div>
+      </article>
 
-        <div class="cols3">
-          <article class="service">
-            <div class="contact-card">
-              <a href="https://wa.me/542944533584" target="_blank" class="contact-btn">
-                <div class="contact-icon">📱</div>
-                <div class="contact-info">
-                  <h3>WhatsApp</h3>
-                  <p><strong>+54 294-4535384</strong></p>
-                  <p>Respuesta rápida para coordinación.</p>
-                </div>
-              </a>
-            </div>
-          </article>
-        
-          <article class="service">
-            <div class="contact-card">
-              <div class="contact-static">
-                <div class="contact-icon">☎️</div>
-                <div class="contact-info">
-                  <h3>Teléfono</h3>
-                  <p><strong>+54 294 453-5384</strong></p>
-                  <p>Llamadas para urgencias y traslados.</p>
-                </div>
-              </div>
-            </div>
-          </article>
-        
-          <article class="service">
-            <div class="contact-card">
-              <div class="contact-static">
-                <div class="contact-icon">📍</div>
-                <div class="contact-info">
-                  <h3>Zona</h3>
-                  <p><strong>Bariloche - Dina Huapi</strong></p>
-                  <p>Consultá disponibilidad según ubicación.</p>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-
-
-        <div class="card formCard">
-          <h3 class="formTitle">Mensaje rápido</h3>
-          <p class="fine">Este botón arma un mensaje para WhatsApp con datos básicos.</p>
-
-          <div class="quickForm">
-            <label>
-              Nombre
-              <input id="qName" type="text" placeholder="Tu nombre" />
-            </label>
-
-            <label>
-              Ubicación
-              <input id="qLocation" type="text" placeholder="Barrio / dirección aproximada" />
-            </label>
-
-            <label>
-              Tipo de servicio
-              <select id="qType">
-                <option value="Traslado">Traslado</option>
-                <option value="Evento">Cobertura de evento</option>
-                <option value="Preventiva">Preventiva / guardia</option>
-                <option value="Otro">Otro</option>
-              </select>
-            </label>
-
-            <label>
-              Horario de Asistencia
-              <input id="qTime" type="time" placeholder="Ahora / hoy 18:00 / mañana" />
-            </label>
+      <article class="service">
+        <div class="inner-card">
+          <div class="contact-icon">
+            ☎️
           </div>
-
-          <div class="row">
-            <a class="btn green" id="btnWhatsApp3" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+          <div class="contact-info">
+            <h3>Teléfono</h3>
+            <p><strong>+54 294 453-5384</strong></p>
+            <p>Llamadas para urgencias y traslados.</p>
           </div>
         </div>
+      </article>
+
+      <article class="service">
+        <div class="inner-card">
+          <div class="contact-icon">
+            📍
+          </div>
+            <div class="contact-info">
+              <h3>Zona</h3>
+              <p><b class="zone">Bariloche y alrededores</b></p>
+              <p>Consultá disponibilidad según ubicación.</p>
+            </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="card formCard">
+      <h3 class="formTitle">Enviar por email</h3>
+      <p class="fine">Completá los datos y se abrirá tu correo con el mensaje listo.</p>
+
+      <div class="quickForm emailForm">
+        <div class="data">
+          <label>
+            Nombre
+            <input id="eName" type="text" placeholder="Tu nombre" />
+          </label>
+
+          <label>
+            Teléfono
+            <input id="ePhone" type="text" placeholder="+54..." />
+          </label>
+
+          <label>
+            Asunto
+            <input id="eSubject" type="text" placeholder="Consulta / Presupuesto / Cobertura" />
+          </label>
+
+          <a class="btn primary" id="btnEmail" href="#">Enviar email</a>
+        </div>
+
+        <label class="messageBox">
+          Mensaje
+          <textarea id="eMsg" placeholder="Contanos qué necesitás"></textarea>
+        </label>
       </div>
-    </section>
+    </div>
+
+    <div class="card formCard">
+      <h3 class="formTitle">Mensaje rápido</h3>
+      <p class="fine">Este botón arma un mensaje para WhatsApp con tus datos básicos.</p>
+
+      <div class="quickForm">
+        <label>
+          Nombre
+          <input id="qName" type="text" placeholder="Tu nombre" />
+        </label>
+
+        <label>
+          Ubicación
+          <input id="qLocation" type="text" placeholder="Barrio / dirección aproximada" />
+        </label>
+
+        <label>
+          Tipo de servicio
+          <select id="qType">
+            <option value="Traslado">Traslado</option>
+            <option value="Evento">Cobertura de evento</option>
+            <option value="Preventiva">Preventiva / guardia</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </label>
+
+        <label>
+          Horario de Asistencia
+          <input id="qTime" type="time" placeholder="Ahora / hoy 18:00 / mañana" />
+        </label>
+      </div>
+
+      <div class="row">
+        <a class="btn green" id="btnWhatsApp3" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
   </main>
 
   <footer class="footer">
-    <div class="wrap foot">
-      <div>
-        <b>SAPHER</b> • Servicio de Paramédicos y Ambulancia
-        <div class="fine">© <span id="year"></span> — Todos los derechos reservados.</div>
-      </div>
+  <div class="wrap foot">
 
-      <div class="fine">
-        Sitio informativo. En emergencias médicas inmediatas, contactá al servicio de emergencias local.
-      </div>
+    <!-- 🔹 LOGO a la izquierda -->
+    <div class="footer-logo">
+      <img src="images/logos/logo-footer-white.png" alt="Logo SAPHER">
     </div>
-  </footer>
+
+    <!-- 🔹 Texto centrado / derecho -->
+    <div class="footer-text">
+      <b>SAPHER</b> • Servicio de Atención Pre-Hospitalaria de Emergencias y Rescate
+      <div class="fine">© <span id="year"></span> — Todos los derechos reservados.</div>
+    </div>
+
+  </div>
+</footer>
+
 
   <script src="app.js"></script>
 </body>
