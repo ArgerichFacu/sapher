@@ -670,12 +670,14 @@ section + section {
 .slider-wrapper {
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
 .slider-container {
   display: flex;
   transition: transform 0.6s ease-in-out;
   width: 100%;
+  touch-action: pan-y; /* Evita conflictos con scroll */
 }
 
 .slide {
@@ -685,18 +687,18 @@ section + section {
 
 .slide img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 60vh;
   object-fit: cover;
+  display: block;
   border-radius: 10px;
 }
 
-/* Botones de navegación */
+/* Botones */
 .prev, .next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   color: white;
   border: none;
   padding: 10px 14px;
@@ -704,18 +706,15 @@ section + section {
   font-size: 1.5rem;
   border-radius: 50%;
   transition: background 0.3s ease;
+  z-index: 10;
 }
 
 .prev:hover, .next:hover {
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
 }
 
-.prev {
-  left: 10px;
-}
-.next {
-  right: 10px;
-}
+.prev { left: 10px; }
+.next { right: 10px; }
 
 /* Dots */
 .dots {
@@ -739,25 +738,27 @@ section + section {
 
 /* 🔹 Responsive */
 @media (max-width: 768px) {
+  .slide img {
+    height: 45vh;
+  }
   .prev, .next {
     font-size: 1.2rem;
     padding: 8px 10px;
   }
-
-  .slider-section {
-    margin: 1.5rem 0.5rem;
-  }
 }
 
 @media (max-width: 480px) {
+  .slide img {
+    height: 40vh;
+  }
   .prev, .next {
     font-size: 1rem;
     padding: 6px 8px;
   }
-
   .dots span {
     height: 8px;
     width: 8px;
   }
 }
+
 
