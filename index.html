@@ -38,7 +38,7 @@
   </script>
 
   <script>
-document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", () => {
   const slides = document.querySelectorAll(".slide");
   const sliderContainer = document.querySelector(".slider-container");
   const prevBtn = document.querySelector(".prev");
@@ -47,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentIndex = 0;
   let interval;
 
-  // Crear puntos dinámicamente
   slides.forEach((_, i) => {
     const dot = document.createElement("span");
     if (i === 0) dot.classList.add("active");
@@ -55,13 +54,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   const dots = document.querySelectorAll(".dots span");
 
-  // 🔹 Función para actualizar la posición del slider
   function updateSlider() {
     sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
     dots.forEach((dot, i) => dot.classList.toggle("active", i === currentIndex));
   }
 
-  // 🔹 Funciones para botones
   function nextSlide() {
     currentIndex = (currentIndex + 1) % slides.length;
     updateSlider();
@@ -72,10 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
     updateSlider();
   }
 
-  // 🔹 Agregar listeners a los botones
   nextBtn.addEventListener("click", () => {
     nextSlide();
-    resetInterval(); // reinicia el temporizador cuando el usuario hace clic
+    resetInterval();
   });
 
   prevBtn.addEventListener("click", () => {
@@ -83,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
     resetInterval();
   });
 
-  // 🔹 Listeners para los puntos
   dots.forEach((dot, i) => {
     dot.addEventListener("click", () => {
       currentIndex = i;
@@ -92,7 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 🔹 Auto-slide cada 5 segundos
   function startAutoSlide() {
     interval = setInterval(nextSlide, 5000);
   }
@@ -102,13 +96,10 @@ document.addEventListener("DOMContentLoaded", () => {
     startAutoSlide();
   }
 
-  // 🔹 Iniciar
   updateSlider();
   startAutoSlide();
 });
 </script>
-
-
 
   <link rel="stylesheet" href="styles.css"/>
   <link rel="icon" href="images/logos/logo-icon.png">
@@ -195,18 +186,19 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     </section>
 
-    <section class="slider">
-      <div class="slider-container">
-        <div class="slide"><img src="images/deslizable/1.png" alt="Ambulancia SAPHER en acción"></div>
-        <div class="slide"><img src="images/deslizable/2.png" alt="Equipo médico SAPHER"></div>
-        <div class="slide"><img src="images/deslizable/3.png" alt="Unidad móvil SAPHER"></div>
+    <section class="slider-section">
+      <div class="slider-wrapper">
+        <button class="prev">&#10094;</button>
+        <div class="slider-container">
+          <div class="slide"><img src="images/deslizable/1.png" alt="Ambulancia 1"></div>
+          <div class="slide"><img src="images/deslizable/2.png" alt="Ambulancia 2"></div>
+          <div class="slide"><img src="images/deslizable/3.png" alt="Ambulancia 3"></div>
+        </div>
+        <button class="next">&#10095;</button>
       </div>
-    
-      <button class="prev">&#10094;</button>
-      <button class="next">&#10095;</button>
-    
       <div class="dots"></div>
     </section>
+
 
     <section id="servicios" class="section">
       <div class="wrap">

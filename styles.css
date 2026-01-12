@@ -656,73 +656,108 @@ section + section {
   color: #b3b3b3;
 }
 
-.slider {
+/*SLIDER*/
+
+.slider-section {
   position: relative;
   width: 100%;
   max-width: 1200px;
-  margin: 60px auto;
+  margin: 2rem auto;
   overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
+
+.slider-wrapper {
+  position: relative;
+  overflow: hidden;
 }
 
 .slider-container {
   display: flex;
   transition: transform 0.6s ease-in-out;
+  width: 100%;
 }
 
 .slide {
   min-width: 100%;
-  flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 .slide img {
   width: 100%;
-  height: 500px;
-  object-fit: cover;
+  height: auto;
   display: block;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
+/* Botones de navegación */
 .prev, .next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  color: #fff;
+  background: rgba(0,0,0,0.4);
+  color: white;
   border: none;
-  padding: 10px 15px;
-  font-size: 1.5rem;
+  padding: 10px 14px;
   cursor: pointer;
+  font-size: 1.5rem;
   border-radius: 50%;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
 }
 
 .prev:hover, .next:hover {
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.6);
 }
 
-.prev { left: 15px; }
-.next { right: 15px; }
+.prev {
+  left: 10px;
+}
+.next {
+  right: 10px;
+}
 
+/* Dots */
 .dots {
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
+  text-align: center;
+  margin-top: 10px;
 }
 
 .dots span {
-  width: 12px;
-  height: 12px;
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: #bbb;
   border-radius: 50%;
-  background: rgba(255,255,255,0.5);
-  cursor: pointer;
-  transition: background 0.3s;
+  display: inline-block;
+  transition: background-color 0.3s ease;
 }
 
 .dots span.active {
-  background: #fff;
+  background-color: #4caf50;
+}
+
+/* 🔹 Responsive */
+@media (max-width: 768px) {
+  .prev, .next {
+    font-size: 1.2rem;
+    padding: 8px 10px;
+  }
+
+  .slider-section {
+    margin: 1.5rem 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .prev, .next {
+    font-size: 1rem;
+    padding: 6px 8px;
+  }
+
+  .dots span {
+    height: 8px;
+    width: 8px;
+  }
 }
 
