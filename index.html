@@ -18,27 +18,8 @@
   <meta name="description" content="SAPHER ofrece atención médica con paramédicos profesionales, traslados, cobertura de eventos y servicio de ambulancia en Bariloche y Dina Huapi.">
   <meta name="robots" content="index, follow">
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MedicalOrganization",
-    "name": "SAPHER",
-    "url": "https://sapher.com.ar",
-    "logo": "https://sapher.com.ar/image/logos/logo-basic.png",
-    "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Calle Ejemplo 123",
-    "addressLocality": "San Carlos de Bariloche",
-    "addressRegion": "Río Negro",
-    "postalCode": "8400",
-    "addressCountry": "AR"
-    },
-    "description": "SAPHER ofrece asistencia médica con paramédicos y ambulancia disponible para traslados, cobertura de eventos y atención prehospitalaria en Bariloche."
-  }
-  </script>
-
   <script>
-  document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const slides = document.querySelectorAll(".slide");
   const sliderContainer = document.querySelector(".slider-container");
   const prevBtn = document.querySelector(".prev");
@@ -46,7 +27,7 @@
   const dotsContainer = document.querySelector(".dots");
   let currentIndex = 0;
   let interval;
-  let startX = 0, endX = 0;
+  let startX = 0, moveX = 0, isSwiping = false;
 
   slides.forEach((_, i) => {
     const dot = document.createElement("span");
@@ -70,45 +51,33 @@
     updateSlider();
   }
 
-  nextBtn.addEventListener("click", () => {
-    nextSlide();
-    resetInterval();
-  });
-
-  prevBtn.addEventListener("click", () => {
-    prevSlide();
-    resetInterval();
-  });
-
+  nextBtn.addEventListener("click", () => { nextSlide(); resetInterval(); });
+  prevBtn.addEventListener("click", () => { prevSlide(); resetInterval(); });
   dots.forEach((dot, i) => {
-    dot.addEventListener("click", () => {
-      currentIndex = i;
-      updateSlider();
-      resetInterval();
-    });
+    dot.addEventListener("click", () => { currentIndex = i; updateSlider(); resetInterval(); });
   });
 
-  function startAutoSlide() {
-    interval = setInterval(nextSlide, 5000);
-  }
+  function startAutoSlide() { interval = setInterval(nextSlide, 5000); }
+  function resetInterval() { clearInterval(interval); startAutoSlide(); }
 
-  function resetInterval() {
-    clearInterval(interval);
-    startAutoSlide();
-  }
-
-  // 🔹 Soporte para Swipe en móviles
+  // ✅ Swipe real compatible con Android e iPhone
   sliderContainer.addEventListener("touchstart", e => {
     startX = e.touches[0].clientX;
-  });
+    isSwiping = true;
+  }, { passive: true });
 
-  sliderContainer.addEventListener("touchend", e => {
-    endX = e.changedTouches[0].clientX;
-    if (startX - endX > 50) {
-      nextSlide();
-    } else if (endX - startX > 50) {
-      prevSlide();
+  sliderContainer.addEventListener("touchmove", e => {
+    if (!isSwiping) return;
+    moveX = e.touches[0].clientX;
+  }, { passive: true });
+
+  sliderContainer.addEventListener("touchend", () => {
+    if (!isSwiping) return;
+    const diff = startX - moveX;
+    if (Math.abs(diff) > 50) {
+      diff > 0 ? nextSlide() : prevSlide();
     }
+    isSwiping = false;
     resetInterval();
   });
 
@@ -116,6 +85,7 @@
   startAutoSlide();
 });
 </script>
+
 
   <link rel="stylesheet" href="styles.css"/>
   <link rel="icon" href="images/logos/logo-icon.png">
