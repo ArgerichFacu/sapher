@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SAPHER | Paramédicos y Ambulancia</title>
+
+  <meta name="description" content="SAPHER ofrece asistencia médica con paramédicos capacitados, 
+  ambulancia disponible, traslados, cobertura de eventos y atención prehospitalaria.">
+  <meta name="keywords" content="ambulancia, paramédicos, bariloche, emergencia, traslado, eventos, preventiva, SAPHER, servicio médico, atención prehospitalaria">
+  <meta name="author" content="Facundo Argerich">
+
+  <meta property="og:title" content="SAPHER | Paramédicos y Ambulancia">
+  <meta property="og:description" content="Atención rápida y segura. Paramédicos con respaldo y ambulancia disponible en Bariloche.">
+  <meta property="og:image" content="https://sapher.com.ar/images/logo-full.jpg">
+  <meta property="og:url" content="https://sapher.com.ar">
+  <meta property="og:type" content="website">
+
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalOrganization",
+    "name": "SAPHER",
+    "url": "https://sapher.com.ar",
+    "logo": "https://sapher.com.ar/images/logo-basic.png",
+    "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle Ejemplo 123",
+    "addressLocality": "San Carlos de Bariloche",
+    "addressRegion": "Río Negro",
+    "postalCode": "8400",
+    "addressCountry": "AR"
+    },
+    "description": "SAPHER ofrece asistencia médica con paramédicos y ambulancia disponible para traslados, cobertura de eventos y atención prehospitalaria en Bariloche."
+  }
+  </script>
+
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" href="images/logo-icon.png">
+</head>
+
+<body data-theme="dark">
+  <header class="header">
+    <div class="wrap nav">
+      <a class="brand" href="#">
+        <div class="logo">
+            <img src="images/logo-basic.png" alt="SAPHER"/>
+        </div>
+        <div class="brandText">
+          <div class="brandName">SAPHER S.A.S</div>
+          <div class="brandSub">Paramédicos & Ambulancia</div>
+        </div>
+      </a>
+
+      <nav class="navlinks">
+        <a href="#servicios">Servicios</a>
+        <a href="#como">Cómo trabajamos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="navActions">
+        <button id="theme-toggle" class="themeBtn">☀️</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap grid">
+        <div class="card heroCard">
+          <span class="badge">🚑 Ambulancia disponible • Atención prehospitalaria</span>
+          <h1>Atención rápida y segura.<br />Paramédicos con respaldo.</h1>
+
+          <p>
+            SAPHER brinda asistencia con personal capacitado y ambulancia disponible para
+            <b>traslados</b>, <b>eventos</b> y <b>cobertura preventiva</b>.
+            Coordinación clara, tiempos ágiles y foco en el paciente.
+          </p>
+
+          <div class="heroActions">
+            <a class="btn primary" href="#contacto">Pedir asistencia</a>
+            <a class="btn" href="#servicios">Ver servicios</a>
+            <span class="pill">📍 <span id="zona">Bariloche y alrededores</span></span>
+          </div>
+
+          <p class="fine">
+            Si es una emergencia médica inmediata, contactá al servicio de emergencias local.
+            SAPHER coordina traslados y cobertura paramédica según disponibilidad.
+          </p>
+        </div>
+
+        <aside class="card mini">
+          <div class="stat">
+            <b>Servicios principales</b>
+            <span>Traslados • Eventos • Preventiva</span>
+          </div>
+
+          <div class="stat">
+            <b>Coordinación</b>
+            <span>Respuesta por WhatsApp/llamada y confirmación de salida</span>
+          </div>
+
+          <div class="stat">
+            <b>Ambulancia</b>
+            <span>Unidad disponible para asistencia y traslado</span>
+          </div>
+
+          <div class="stat">
+            <b>Horarios</b>
+            <span id="horarios">A coordinar</span>
+          </div>
+
+          <div class="row">
+            <span class="pill">⚡ Tiempo importa</span>
+            <span class="pill">🩺 Profesional</span>
+            <span class="pill">🤝 Confiable</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="servicios" class="section">
+      <div class="wrap">
+        <div class="sectionTitle">
+          <h2>Servicios</h2>
+          <div class="fine">Coberturas para particulares, empresas y organizaciones.</div>
+        </div>
+
+        <div class="cols3">
+          <article class="service">
+            <div class="icon">🚑</div>
+            <h3>Traslados programados</h3>
+            <p>Traslado sanitario coordinado con antelación. Ideal para clínicas, derivaciones y turnos.</p>
+          </article>
+
+          <article class="service">
+            <div class="icon green">🩺</div>
+            <h3>Atención prehospitalaria</h3>
+            <p>Asistencia inicial, estabilización y acompañamiento durante el traslado cuando corresponde.</p>
+          </article>
+
+          <article class="service">
+            <div class="icon">🎫</div>
+            <h3>Cobertura de eventos</h3>
+            <p>Presencia preventiva en eventos deportivos, culturales y corporativos con protocolo de actuación.</p>
+          </article>
+
+          <article class="service">
+            <div class="icon green">🏢</div>
+            <h3>Servicios para empresas</h3>
+            <p>Soporte para plantas, obras y operativos. Coordinación y respuesta según plan acordado.</p>
+          </article>
+
+          <article class="service">
+            <div class="icon">🧰</div>
+            <h3>Preventiva y guardias</h3>
+            <p>Dispositivo de salud preventiva para actividades de riesgo o grandes concurrencias.</p>
+          </article>
+
+          <article class="service">
+            <div class="icon green">📞</div>
+            <h3>Coordinación simple</h3>
+            <p>Canales directos, confirmación y seguimiento. Menos vueltas, más claridad.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="como" class="section">
+      <div class="wrap">
+        <div class="sectionTitle">
+          <h2>Cómo trabajamos</h2>
+          <div class="fine">Proceso simple para coordinar una salida.</div>
+        </div>
+
+        <div class="cols3">
+          <article class="service">
+            <div class="icon">1</div>
+            <h3>Contacto</h3>
+            <p>Escribís por WhatsApp o llamás. Nos pasás ubicación, motivo y datos básicos.</p>
+          </article>
+
+          <article class="service">
+            <div class="icon green">2</div>
+            <h3>Confirmación</h3>
+            <p>Confirmamos disponibilidad, estimación y modalidad (traslado, cobertura, etc.).</p>
+          </article>
+
+          <article class="service">
+            <div class="icon">3</div>
+            <h3>Asistencia</h3>
+            <p>Salida de la unidad y atención según el caso. Coordinación hasta finalizar el servicio.</p>
+          </article>
+        </div>
+
+        <div class="cta">
+          <div>
+            <div class="ctaTitle">¿Querés coordinar un servicio?</div>
+            <div class="fine">Respondemos por WhatsApp y te confirmamos disponibilidad.</div>
+          </div>
+
+          <div class="row">
+            <a class="btn green" id="btnWhatsApp2" href="#" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+            <a class="btn primary" href="#contacto">Dejar consulta</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section">
+      <div class="wrap">
+        <div class="sectionTitle">
+          <h2>Contacto</h2>
+        </div>
+
+        <div class="cols3">
+          <article class="service">
+            <div class="icon green">📱</div>
+            <h3>WhatsApp</h3>
+            <p><b id="waLabel">+54 9 294 000-0000</b><br />Respuesta rápida para coordinación.</p>
+          </article>
+
+          <article class="service">
+            <div class="icon">☎️</div>
+            <h3>Teléfono</h3>
+            <p><b id="telLabel">+54 294 000-0000</b><br />Llamadas para urgencias y traslados.</p>
+          </article>
+
+          <article class="service">
+            <div class="icon green">📍</div>
+            <h3>Zona</h3>
+            <p><b id="zonaLabel">Bariloche y alrededores</b><br />Consultá disponibilidad según ubicación.</p>
+          </article>
+        </div>
+        
+        <div class="card formCard">
+            <h3 class="formTitle">Enviar por email</h3>
+            <p class="fine">Completá los datos y se abrirá tu correo con el mensaje listo.</p>
+        
+            <div class="quickForm emailForm">
+              <div class="data">
+                <label>
+                  Nombre
+                  <input id="eName" type="text" placeholder="Tu nombre" />
+                </label>
+            
+                <label>
+                  Teléfono
+                  <input id="ePhone" type="text" placeholder="+54..." />
+                </label>
+            
+                <label>
+                  Asunto
+                  <input id="eSubject" type="text" placeholder="Consulta / Presupuesto / Cobertura" />
+                </label>
+            
+                <a class="btn primary" id="btnEmail" href="#">Enviar email</a>
+                </div>
+            
+                <label class="messageBox">
+                  Mensaje
+                  <textarea id="eMsg" placeholder="Contanos qué necesitás"></textarea>
+                </label>
+            </div>
+        </div>
+
+        <div class="card formCard">
+          <h3 class="formTitle">Mensaje rápido</h3>
+          <p class="fine">Este botón arma un mensaje para WhatsApp con datos básicos.</p>
+
+          <div class="quickForm">
+            <label>
+              Nombre
+              <input id="qName" type="text" placeholder="Tu nombre" />
+            </label>
+
+            <label>
+              Ubicación
+              <input id="qLocation" type="text" placeholder="Barrio / dirección aproximada" />
+            </label>
+
+            <label>
+              Tipo de servicio
+              <select id="qType">
+                <option value="Traslado">Traslado</option>
+                <option value="Evento">Cobertura de evento</option>
+                <option value="Preventiva">Preventiva / guardia</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </label>
+
+            <label>
+              Horario de Asistencia
+              <input id="qTime" type="time" placeholder="Ahora / hoy 18:00 / mañana" />
+            </label>
+          </div>
+
+          <div class="row">
+            <a class="btn green" id="btnWhatsApp3" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap foot">
+      <div>
+        <b>SAPHER</b> • Servicio de Paramédicos y Ambulancia
+        <div class="fine">© <span id="year"></span> — Todos los derechos reservados.</div>
+      </div>
+
+      <div class="fine">
+        Sitio informativo. En emergencias médicas inmediatas, contactá al servicio de emergencias local.
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
