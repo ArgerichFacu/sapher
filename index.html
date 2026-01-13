@@ -9,7 +9,6 @@
   ambulancia disponible, traslados, cobertura de eventos y atención prehospitalaria.">
   <meta name="keywords" content="ambulancia, paramédicos, bariloche, emergencia, traslado, eventos, preventiva, SAPHER, servicio médico, atención prehospitalaria">
   <meta name="author" content="Facundo Argerich">
-
   <meta property="og:title" content="SAPHER | Servicio de Atención Pre-Hospitalaria de Emergencias y Rescate">
   <meta property="og:description" content="Atención rápida y segura. Paramédicos con respaldo y ambulancia disponible en Bariloche.">
   <meta property="og:image" content="https://sapher.com.ar/images/logos/logo-full.jpg">
@@ -19,73 +18,71 @@
   <meta name="robots" content="index, follow">
 
   <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const slides = document.querySelectorAll(".slide");
-  const sliderContainer = document.querySelector(".slider-container");
-  const prevBtn = document.querySelector(".prev");
-  const nextBtn = document.querySelector(".next");
-  const dotsContainer = document.querySelector(".dots");
-  let currentIndex = 0;
-  let interval;
-  let startX = 0, moveX = 0, isSwiping = false;
-
-  slides.forEach((_, i) => {
-    const dot = document.createElement("span");
-    if (i === 0) dot.classList.add("active");
-    dotsContainer.appendChild(dot);
-  });
-  const dots = document.querySelectorAll(".dots span");
-
-  function updateSlider() {
-    sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-    dots.forEach((dot, i) => dot.classList.toggle("active", i === currentIndex));
-  }
-
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % slides.length;
-    updateSlider();
-  }
-
-  function prevSlide() {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    updateSlider();
-  }
-
-  nextBtn.addEventListener("click", () => { nextSlide(); resetInterval(); });
-  prevBtn.addEventListener("click", () => { prevSlide(); resetInterval(); });
-  dots.forEach((dot, i) => {
-    dot.addEventListener("click", () => { currentIndex = i; updateSlider(); resetInterval(); });
-  });
-
-  function startAutoSlide() { interval = setInterval(nextSlide, 5000); }
-  function resetInterval() { clearInterval(interval); startAutoSlide(); }
-
-  // ✅ Swipe real compatible con Android e iPhone
-  sliderContainer.addEventListener("touchstart", e => {
-    startX = e.touches[0].clientX;
-    isSwiping = true;
-  }, { passive: true });
-
-  sliderContainer.addEventListener("touchmove", e => {
-    if (!isSwiping) return;
-    moveX = e.touches[0].clientX;
-  }, { passive: true });
-
-  sliderContainer.addEventListener("touchend", () => {
-    if (!isSwiping) return;
-    const diff = startX - moveX;
-    if (Math.abs(diff) > 50) {
-      diff > 0 ? nextSlide() : prevSlide();
-    }
-    isSwiping = false;
-    resetInterval();
-  });
-
-  updateSlider();
-  startAutoSlide();
-});
-</script>
-
+    document.addEventListener("DOMContentLoaded", () => {
+      const slides = document.querySelectorAll(".slide");
+      const sliderContainer = document.querySelector(".slider-container");
+      const prevBtn = document.querySelector(".prev");
+      const nextBtn = document.querySelector(".next");
+      const dotsContainer = document.querySelector(".dots");
+      let currentIndex = 0;
+      let interval;
+      let startX = 0, moveX = 0, isSwiping = false;
+      
+      slides.forEach((_, i) => {
+        const dot = document.createElement("span");
+        if (i === 0) dot.classList.add("active");
+        dotsContainer.appendChild(dot);
+      });
+      const dots = document.querySelectorAll(".dots span");
+    
+      function updateSlider() {
+        sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        dots.forEach((dot, i) => dot.classList.toggle("active", i === currentIndex));
+      }
+    
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlider();
+      }
+    
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlider();
+      }
+    
+      nextBtn.addEventListener("click", () => { nextSlide(); resetInterval(); });
+      prevBtn.addEventListener("click", () => { prevSlide(); resetInterval(); });
+      dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => { currentIndex = i; updateSlider(); resetInterval(); });
+      });
+    
+      function startAutoSlide() { interval = setInterval(nextSlide, 5000); }
+      function resetInterval() { clearInterval(interval); startAutoSlide(); }
+    
+      sliderContainer.addEventListener("touchstart", e => {
+        startX = e.touches[0].clientX;
+        isSwiping = true;
+      }, { passive: true });
+    
+      sliderContainer.addEventListener("touchmove", e => {
+        if (!isSwiping) return;
+        moveX = e.touches[0].clientX;
+      }, { passive: true });
+    
+      sliderContainer.addEventListener("touchend", () => {
+        if (!isSwiping) return;
+        const diff = startX - moveX;
+        if (Math.abs(diff) > 50) {
+          diff > 0 ? nextSlide() : prevSlide();
+        }
+        isSwiping = false;
+        resetInterval();
+      });
+    
+      updateSlider();
+      startAutoSlide();
+    });
+  </script>
 
   <link rel="stylesheet" href="styles.css"/>
   <link rel="icon" href="images/logos/logo-icon.png">
@@ -97,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="wrap nav">
       <a class="brand" href="#">
         <div class="logo">
-            <img src="images/logos/logo-basic.png" alt="SAPHER"/>
+            <img src="images/logos/logo-basic-black.png" alt="SAPHER"/>
         </div>
         <div class="brandText">
           <div class="brandName">SAPHER</div>
@@ -186,7 +183,6 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="dots"></div>
     </section>
 
-
     <section id="servicios" class="section">
       <div class="wrap">
         <div class="sectionTitle">
@@ -198,7 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <article class="service">
             <div class="icon">🚑</div>
             <h3>Traslados programados</h3>
-            <p>Traslado sanitario coordinado con antelación. Ideal para clínicas, derivaciones y turnos.</p>
+            <p>Traslado de baja, media y alta complejidad sanitario coordinado con antelación. Ideal para clínicas, derivaciones y turnos.</p>
           </article>
 
           <article class="service">
@@ -222,7 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <article class="service">
             <div class="icon">⚡</div>
             <h3>Cobertura Cardio Protegida</h3>
-            <p>Instalación y mantenimiento de zonas cardio protegidas con desfibriladores DEA y personal capacitado para emergencias.</p>
+            <p>Servicio de desfibriladores DEA y personal capacitado para emergencias.</p>
           </article>
 
           <article class="service">
@@ -237,7 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <section id="como" class="section">
       <div class="wrap">
         <div class="sectionTitle">
-          <h2>Cómo trabajamos</h2>
+          <h2>Proceso simple para solicitar y coordinar un servicio</h2>
           <div class="fine">Proceso simple para coordinar una salida.</div>
         </div>
 
@@ -264,144 +260,138 @@ document.addEventListener("DOMContentLoaded", () => {
     </section>
 
     <section id="contacto" class="section">
-  <div class="wrap">
-    <div class="sectionTitle">
-      <h2>Contacto</h2>
-      <div class="fine">Comunicate con nosotros por correo o WhatsApp.</div>
-    </div>
-
-    <div class="cols3">
-      <article class="service">
-        <div class="inner-card">
-          <a href="https://wa.me/5492944535384" target="_blank" class="whatsapp-btn">
-            <div class="contact-icon">
-              📱
+      <div class="wrap">
+        <div class="sectionTitle">
+          <h2>Contacto</h2>
+          <div class="fine">Comunicate con nosotros por correo o WhatsApp.</div>
+        </div>
+      
+        <div class="cols3">
+          <article class="service">
+            <div class="inner-card">
+              <a href="https://wa.me/5492944535384" target="_blank" class="whatsapp-btn">
+                <div class="contact-icon">
+                  📱
+                </div>
+                <div class="contact-info">
+                  <h3>WhatsApp</h3>
+                  <p><strong>+54 294-4535384</strong></p>
+                  <p>Respuesta rápida para coordinación.</p>
+                </div>
+              </a>
             </div>
-            <div class="contact-info">
-              <h3>WhatsApp</h3>
-              <p><strong>+54 294-4535384</strong></p>
-              <p>Respuesta rápida para coordinación.</p>
+          </article>
+        
+          <article class="service">
+            <div class="inner-card">
+              <div class="contact-icon">
+                ☎️
+              </div>
+              <div class="contact-info">
+                <h3>Teléfono</h3>
+                <p><strong>+54 294 453-5384</strong></p>
+                <p>Llamadas para urgencias y traslados.</p>
+              </div>
             </div>
-          </a>
-        </div>
-      </article>
-
-      <article class="service">
-        <div class="inner-card">
-          <div class="contact-icon">
-            ☎️
-          </div>
-          <div class="contact-info">
-            <h3>Teléfono</h3>
-            <p><strong>+54 294 453-5384</strong></p>
-            <p>Llamadas para urgencias y traslados.</p>
-          </div>
-        </div>
-      </article>
-
-      <article class="service">
-        <div class="inner-card">
-          <div class="contact-icon">
-            📍
-          </div>
-            <div class="contact-info">
-              <h3>Zona</h3>
-              <p><b class="zone">Bariloche y alrededores</b></p>
-              <p>Consultá disponibilidad según ubicación.</p>
+          </article>
+        
+          <article class="service">
+            <div class="inner-card">
+              <div class="contact-icon">
+                📍
+              </div>
+                <div class="contact-info">
+                  <h3>Zona</h3>
+                  <p><b class="zone">Bariloche y alrededores</b></p>
+                  <p>Consultá disponibilidad según ubicación.</p>
+                </div>
             </div>
+          </article>
         </div>
-      </article>
-    </div>
-
-    <div class="card formCard">
-      <h3 class="formTitle">Enviar por email</h3>
-      <p class="fine">Completá los datos y se abrirá tu correo con el mensaje listo.</p>
-
-      <div class="quickForm emailForm">
-        <div class="data">
-          <label>
-            Nombre
-            <input id="eName" type="text" placeholder="Tu nombre" />
-          </label>
-
-          <label>
-            Teléfono
-            <input id="ePhone" type="text" placeholder="+54..." />
-          </label>
-
-          <label>
-            Asunto
-            <input id="eSubject" type="text" placeholder="Consulta / Presupuesto / Cobertura" />
-          </label>
-
-          <a class="btn primary" id="btnEmail" href="#">Enviar email</a>
+      
+        <div class="card formCard">
+          <h3 class="formTitle">Enviar por email</h3>
+          <p class="fine">Completá los datos y se abrirá tu correo con el mensaje listo.</p>
+        
+          <div class="quickForm emailForm">
+            <div class="data">
+              <label>
+                Nombre
+                <input id="eName" type="text" placeholder="Tu nombre" />
+              </label>
+            
+              <label>
+                Teléfono
+                <input id="ePhone" type="text" placeholder="+54..." />
+              </label>
+            
+              <label>
+                Asunto
+                <input id="eSubject" type="text" placeholder="Consulta / Presupuesto / Cobertura" />
+              </label>
+            
+              <a class="btn primary" id="btnEmail" href="#">Enviar email</a>
+            </div>
+          
+            <label class="messageBox">
+              Mensaje
+              <textarea id="eMsg" placeholder="Contanos qué necesitás"></textarea>
+            </label>
+          </div>
         </div>
-
-        <label class="messageBox">
-          Mensaje
-          <textarea id="eMsg" placeholder="Contanos qué necesitás"></textarea>
-        </label>
+      
+        <div class="card formCard">
+          <h3 class="formTitle">Mensaje rápido</h3>
+          <p class="fine">Este botón arma un mensaje para WhatsApp con tus datos básicos.</p>
+        
+          <div class="quickForm">
+            <label>
+              Nombre
+              <input id="qName" type="text" placeholder="Tu nombre" />
+            </label>
+          
+            <label>
+              Ubicación
+              <input id="qLocation" type="text" placeholder="Barrio / dirección aproximada" />
+            </label>
+          
+            <label>
+              Tipo de servicio
+              <select id="qType">
+                <option value="Traslado">Traslado</option>
+                <option value="Evento">Cobertura de evento</option>
+                <option value="Preventiva">Preventiva / guardia</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </label>
+          
+            <label>
+              Horario de Asistencia
+              <input id="qTime" type="time" placeholder="Ahora / hoy 18:00 / mañana" />
+            </label>
+          </div>
+        
+          <div class="row">
+            <a class="btn green" id="btnWhatsApp3" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <div class="card formCard">
-      <h3 class="formTitle">Mensaje rápido</h3>
-      <p class="fine">Este botón arma un mensaje para WhatsApp con tus datos básicos.</p>
-
-      <div class="quickForm">
-        <label>
-          Nombre
-          <input id="qName" type="text" placeholder="Tu nombre" />
-        </label>
-
-        <label>
-          Ubicación
-          <input id="qLocation" type="text" placeholder="Barrio / dirección aproximada" />
-        </label>
-
-        <label>
-          Tipo de servicio
-          <select id="qType">
-            <option value="Traslado">Traslado</option>
-            <option value="Evento">Cobertura de evento</option>
-            <option value="Preventiva">Preventiva / guardia</option>
-            <option value="Otro">Otro</option>
-          </select>
-        </label>
-
-        <label>
-          Horario de Asistencia
-          <input id="qTime" type="time" placeholder="Ahora / hoy 18:00 / mañana" />
-        </label>
-      </div>
-
-      <div class="row">
-        <a class="btn green" id="btnWhatsApp3" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a>
-      </div>
-    </div>
-  </div>
-</section>
-
+    </section>
   </main>
 
   <footer class="footer">
-  <div class="wrap foot">
-
-    <!-- 🔹 LOGO a la izquierda -->
-    <div class="footer-logo">
-      <img src="images/logos/logo-footer-white.png" alt="Logo SAPHER">
+    <div class="wrap foot">
+      <div class="footer-logo">
+        <img src="images/logos/logo-footer-black.png" alt="Logo SAPHER">
+      </div>
+      <div class="footer-text">
+        <b>SAPHER</b> • Servicio de Atención Pre-Hospitalaria de Emergencias y Rescate
+        <div class="fine">© <span id="year"></span> — Todos los derechos reservados.</div>
+      </div>
     </div>
-
-    <!-- 🔹 Texto centrado / derecho -->
-    <div class="footer-text">
-      <b>SAPHER</b> • Servicio de Atención Pre-Hospitalaria de Emergencias y Rescate
-      <div class="fine">© <span id="year"></span> — Todos los derechos reservados.</div>
-    </div>
-
-  </div>
-</footer>
-
+  </footer>
 
   <script src="app.js"></script>
+
 </body>
 </html>
