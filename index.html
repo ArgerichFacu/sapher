@@ -84,12 +84,40 @@
     });
   </script>
 
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btnEmail = document.getElementById("btnEmail");
+    if (!btnEmail) return;
+
+    btnEmail.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // Obtener los valores del formulario
+      const name = document.getElementById("eName").value || "(Sin nombre)";
+      const phone = document.getElementById("ePhone").value || "(Sin teléfono)";
+      const subject = document.getElementById("eSubject").value || "Consulta general";
+      const message = document.getElementById("eMsg").value || "";
+
+      // Crear el mailto dinámico
+      const email = "info@sapher.com.ar"; // ✅ Cambiá por tu dirección real
+      const body = `Hola, soy ${name}.\nTeléfono: ${phone}\n\n${message}`;
+
+      // Codificar URL correctamente (muy importante)
+      const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      // Abrir el cliente de correo
+      window.location.href = mailtoLink;
+    });
+  });
+  </script>
+
+
   <link rel="stylesheet" href="styles.css"/>
   <link rel="icon" href="images/logos/logo-icon.png">
   <link rel="canonical" href="https://sapher.com.ar/">
 </head>
 
-<body data-theme="dark">
+<body data-theme="light">
   <header class="header">
     <div class="wrap nav">
       <a class="brand" href="#">
@@ -110,7 +138,7 @@
       </nav>
 
       <div class="navActions">
-        <button id="theme-toggle" class="themeBtn">☀️</button>
+        <button id="theme-toggle" class="themeBtn">🌙</button>
       </div>
     </div>
   </header>
@@ -187,31 +215,30 @@
       <div class="wrap">
         <div class="sectionTitle">
           <h2>Servicios</h2>
-          <div class="fine">Coberturas para particulares, empresas y organizaciones.</div>
         </div>
 
         <div class="cols3">
           <article class="service">
             <div class="icon">🚑</div>
-            <h3>Traslados programados</h3>
+            <h3>Traslados Programados</h3>
             <p>Traslado de baja, media y alta complejidad sanitario coordinado con antelación. Ideal para clínicas, derivaciones y turnos.</p>
           </article>
 
           <article class="service">
             <div class="icon green">🩺</div>
-            <h3>Atención prehospitalaria</h3>
+            <h3>Atención Prehospitalaria</h3>
             <p>Asistencia inicial, estabilización y acompañamiento durante el traslado cuando corresponde.</p>
           </article>
 
           <article class="service">
             <div class="icon">⛑️</div>
-            <h3>Cobertura de eventos</h3>
+            <h3>Cobertura de Eventos</h3>
             <p>Presencia preventiva en eventos deportivos, culturales y corporativos con protocolo de actuación.</p>
           </article>
 
           <article class="service">
             <div class="icon green">🏢</div>
-            <h3>Servicios para empresas</h3>
+            <h3>Servicios para Empresas</h3>
             <p>Soporte para plantas, obras y operativos. Coordinación y respuesta según plan acordado.</p>
           </article>
 
@@ -234,7 +261,6 @@
       <div class="wrap">
         <div class="sectionTitle">
           <h2>Proceso simple para solicitar y coordinar un servicio</h2>
-          <div class="fine">Proceso simple para coordinar una salida.</div>
         </div>
 
         <div class="cols3">
@@ -263,7 +289,6 @@
       <div class="wrap">
         <div class="sectionTitle">
           <h2>Contacto</h2>
-          <div class="fine">Comunicate con nosotros por correo o WhatsApp.</div>
         </div>
       
         <div class="cols3">
@@ -283,17 +308,18 @@
           </article>
         
           <article class="service">
-            <div class="inner-card">
-              <div class="contact-icon">
-                ☎️
+            <a href="tel:+542944535384" class="contact-btn">
+              <div class="inner-card">
+                <div class="contact-icon">☎️</div>
+                <div class="contact-info">
+                  <h3>Teléfono</h3>
+                  <p><strong>+54 294 453-5384</strong></p>
+                  <p>Llamadas para urgencias y traslados.</p>
+                </div>
               </div>
-              <div class="contact-info">
-                <h3>Teléfono</h3>
-                <p><strong>+54 294 453-5384</strong></p>
-                <p>Llamadas para urgencias y traslados.</p>
-              </div>
-            </div>
+            </a>
           </article>
+
         
           <article class="service">
             <div class="inner-card">
@@ -358,9 +384,12 @@
             <label>
               Tipo de servicio
               <select id="qType">
-                <option value="Traslado">Traslado</option>
-                <option value="Evento">Cobertura de evento</option>
-                <option value="Preventiva">Preventiva / guardia</option>
+                <option value="Traslado">Traslado Programado</option>
+                <option value="Evento">Atención Prehospitalaria</option>
+                <option value="Evento">Cobertura de Evento</option>
+                <option value="Preventiva">Servicios para Empresas</option>
+                <option value="Preventiva">Cobertura Cardio Protegida</option>
+                <option value="Preventiva">Cursos</option>
                 <option value="Otro">Otro</option>
               </select>
             </label>

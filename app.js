@@ -94,7 +94,7 @@ if (btnEmail) {
 const themeBtn = document.getElementById("theme-toggle");
 const body = document.body;
 
-const savedTheme = localStorage.getItem("theme") || "dark";
+const savedTheme = localStorage.getItem("theme") || "light";
 body.setAttribute("data-theme", savedTheme);
 
 const updateThemeIcon = () => {
@@ -115,4 +115,3 @@ if (themeBtn) {
     updateThemeIcon();
   });
 }
-

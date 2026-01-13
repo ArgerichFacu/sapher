@@ -16,6 +16,7 @@
   --border: rgba(255,255,255,.08);
   --shadow: 0 18px 45px rgba(0,0,0,.35);
   --radius: 18px;
+  --inner-card: #0d1117d7;
 }
 
 body[data-theme="light"] {
@@ -27,6 +28,7 @@ body[data-theme="light"] {
   --border: #e2e8f0;
   --shadow: 0 10px 28px rgba(15,23,42,.08);
   --fine-text: rgb(0, 0, 0);
+  --inner-card: #b3bddc85;
 }
 
 body[data-theme="light"] .themeBtn {
@@ -112,6 +114,7 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   justify-content: space-between;
   padding: 20px 0;
+  font-size: 20px;
 }
 
 .brand {
@@ -228,7 +231,7 @@ a { color: inherit; text-decoration: none; }
   font-weight: 800;
   transition: transform .08s ease, background .2s ease, border-color .2s ease, filter .2s ease;
   cursor: pointer;
-  box-shadow: 0 14px 28px rgba(30,91,216,.25);
+  box-shadow: 0 5px 10px rgba(30,91,216,.25);
   margin-left: 5px;
   margin-right: 5px;
   margin-top: 10px;
@@ -322,12 +325,19 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .quickForm {
   margin-bottom: 22px;
 }
 
+@media (max-width: 600px) {
+  .row {
+    flex-wrap: wrap; /* vuelve al comportamiento anterior */
+    justify-content: center;
+  }
+}
 
 /* ========================================================= */
 /* ✏️ TEXTO */
@@ -354,7 +364,7 @@ p b {
 }
 
 .zone {
-  color: white;
+  color: -tex;
 }
 
 .fine {
@@ -501,7 +511,7 @@ section#contacto .contact-info p {
 /* 🔹 Pills informativas */
 .pill {
   display: inline-flex;
-  gap: 8px;
+  gap: 3px;
   align-items: center;
   padding: 10px 12px;
   border-radius: 999px;
@@ -670,7 +680,8 @@ textarea {
   }
 
   .footer-logo img {
-    width: 100px;
+    width: 300px;
+    height: auto;
   }
 }
 
@@ -844,6 +855,27 @@ section + section {
   padding: 1.5rem !important;
 }
 
+#contacto .service a.contact-btn {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+#contacto .service a.contact-btn .inner-card {
+  background-color: #0e111a;
+  border-radius: 14px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.25s ease;
+}
+
+#contacto .service a.contact-btn:hover .inner-card {
+  transform: scale(1.03);
+  background-color: #1a1f2b;
+}
+
 /* 💚 Hover general */
 #contacto .service:hover {
   box-shadow: 0 6px 18px rgba(0,0,0,0.45) !important;
@@ -875,12 +907,12 @@ section + section {
   margin: 0;
   font-size: 1.2rem;
   font-weight: 700;
-  color: #ffffff !important;
+  color: var(--text) !important;
 }
 
 #contacto .contact-info p {
   margin: 0.2rem 0;
-  color: #b3b3b3 !important;
+  color: var(--text) !important;
 }
 
 /* ========================================================= */
@@ -888,7 +920,7 @@ section + section {
 /* ========================================================= */
 
 #contacto .inner-card {
-  background-color: #0d1117 !important;
+  background-color: var(--inner-card) !important;
   border-radius: 12px;
   padding: 1.5rem;
   height: 100%;
