@@ -974,3 +974,68 @@ section + section {
   flex-direction: column;
   justify-content: center;
 }
+
+/* 🔹 Contenedor del formulario + imagen */
+.form-image-box {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* 🔹 Card (formulario) */
+.formCard.mensaje-rapido {
+  flex: 1;
+}
+
+/* 🔹 Imagen al lado derecho */
+.form-side-image {
+  flex: 0 0 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-side-image img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+  object-fit: cover;
+}
+
+/* Ajustar tamaño de imagen lateral */
+.form-side-image img {
+  width: 100%;
+  max-width: 400px; /* 🔹 un poco más chica */
+  height: 100%;
+  max-height: 500px; /* 🔹 limita la altura para emparejar con la card */
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+  margin-top: 14px;
+}
+
+/* Reducir espacio debajo del botón de WhatsApp */
+.formCard.mensaje-rapido .row {
+  margin-bottom: 0.5rem; /* 🔹 antes seguro era 1.5 o 2rem */
+}
+
+
+/* 🔹 Responsive: apila en pantallas chicas */
+@media (max-width: 900px) {
+  .form-image-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-side-image {
+    order: -1; /* imagen arriba */
+  }
+
+  .form-side-image img {
+    max-width: 90%;
+  }
+}

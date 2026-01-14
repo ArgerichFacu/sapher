@@ -215,12 +215,14 @@
     </section>
 
     <section class="slider-section">
-      <div class="slider-wrapper">
         <button class="prev">&#10094;</button>
         <div class="slider-container">
-          <div class="slide"><img src="images/deslizable/1.png" alt="Ambulancia 1"></div>
-          <div class="slide"><img src="images/deslizable/2.png" alt="Ambulancia 3"></div>
-          <div class="slide"><img src="images/deslizable/3.png" alt="Ambulancia 4"></div>
+          <div class="slide"><img src="images/Ambu/deslizable/1.png" alt="Ambulancia 1"></div>
+          <div class="slide"><img src="images/Ambu/deslizable/ext-vd-h3-edit.jpg" alt="Ambulancia 2"></div>
+          <div class="slide"><img src="images/Ambu/deslizable/int-noc2-edit.jpg" alt="Interior 1"></div>
+          <div class="slide"><img src="images/Ambu/deslizable/2.png" alt="Ambulancia 3"></div>
+          <div class="slide"><img src="images/Ambu/deslizable/ext-vi-h5-edit.jpg" alt="Ambulancia 4"></div>
+          <div class="slide"><img src="images/Ambu/deslizable/int-noc3-edit.jpg" alt="Interior 2"></div>
         </div>
         <button class="next">&#10095;</button>
       </div>
@@ -382,45 +384,52 @@
           </div>
         </div>
       
-        <div class="card formCard">
-          <h3 class="formTitle">Mensaje rápido</h3>
-          <p class="fine">Este botón arma un mensaje para WhatsApp con tus datos básicos.</p>
-        
-          <div class="quickForm">
-            <label>
-              Nombre
-              <input id="qName" type="text" placeholder="Tu nombre" />
-            </label>
+        <div class="form-image-box">
+          <div class="card formCard mensaje-rapido">
+            <h3 class="formTitle">Mensaje rápido</h3>
+            <p class="fine">Este botón arma un mensaje para WhatsApp con tus datos básicos.</p>
+            <div class="quickForm">
+              <label>
+                Nombre
+                <input id="qName" type="text" placeholder="Tu nombre" />
+              </label>
+            
+              <label>
+                Ubicación
+                <input id="qLocation" type="text" placeholder="Barrio / dirección aproximada" />
+              </label>
+            
+              <label>
+                Tipo de servicio
+                <select id="qType">
+                  <option value="Traslado">Traslado Programado</option>
+                  <option value="Atencion">Atención Prehospitalaria</option>
+                  <option value="Evento">Cobertura de Evento</option>
+                  <option value="Empresas">Servicios para Empresas</option>
+                  <option value="Cardio">Cobertura Cardio Protegida</option>
+                  <option value="Cursos">Cursos</option>
+                  <option value="Otro">Otro</option>
+                </select>
+              </label>
+            
+              <label>
+                Horario de Asistencia
+                <input id="qTime" type="time" />
+              </label>
+            </div>
           
-            <label>
-              Ubicación
-              <input id="qLocation" type="text" placeholder="Barrio / dirección aproximada" />
-            </label>
-          
-            <label>
-              Tipo de servicio
-              <select id="qType">
-                <option value="Traslado">Traslado Programado</option>
-                <option value="Evento">Atención Prehospitalaria</option>
-                <option value="Evento">Cobertura de Evento</option>
-                <option value="Preventiva">Servicios para Empresas</option>
-                <option value="Preventiva">Cobertura Cardio Protegida</option>
-                <option value="Preventiva">Cursos</option>
-                <option value="Otro">Otro</option>
-              </select>
-            </label>
-          
-            <label>
-              Horario de Asistencia
-              <input id="qTime" type="time" placeholder="Ahora / hoy 18:00 / mañana" />
-            </label>
+            <div class="row">
+              <a class="btn green" id="btnWhatsApp3" href="#" target="_blank" rel="noopener">
+                Enviar por WhatsApp
+              </a>
+            </div>
           </div>
         
-          <div class="row">
-            <a class="btn green" id="btnWhatsApp3" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+            <div class="form-side-image">
+              <img src="images/Ambu/contact-image1.png" alt="Ambulancia SAPHER">
+            </div>
           </div>
         </div>
-      </div>
     </section>
   </main>
 
