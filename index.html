@@ -85,30 +85,29 @@
   </script>
 
   <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const btnEmail = document.getElementById("btnEmail");
-    if (!btnEmail) return;
-
-    btnEmail.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      // Obtener los valores del formulario
-      const name = document.getElementById("eName").value || "(Sin nombre)";
-      const phone = document.getElementById("ePhone").value || "(Sin teléfono)";
-      const subject = document.getElementById("eSubject").value || "Consulta general";
-      const message = document.getElementById("eMsg").value || "";
-
-      // Crear el mailto dinámico
-      const email = "info@sapher.com.ar"; // ✅ Cambiá por tu dirección real
-      const body = `Hola, soy ${name}.\nTeléfono: ${phone}\n\n${message}`;
-
-      // Codificar URL correctamente (muy importante)
-      const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-      // Abrir el cliente de correo
-      window.location.href = mailtoLink;
+    document.addEventListener("DOMContentLoaded", () => {
+      const btnEmail = document.getElementById("btnEmail");
+      if (!btnEmail) return;
+    
+      btnEmail.addEventListener("click", (e) => {
+        e.preventDefault();
+      
+        const name = document.getElementById("eName").value || "(Sin nombre)";
+        const phone = document.getElementById("ePhone").value || "(Sin teléfono)";
+        const subject = document.getElementById("eSubject").value || "Consulta general";
+        const message = document.getElementById("eMsg").value || "";
+      
+        const email = "info@sapher.com.ar";
+        const body = `Hola, soy ${name}.\nTeléfono: ${phone}\n\n${message}\n\nEnviado desde la web de SAPHER`;
+      
+        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+        // Más compatible con móviles
+        setTimeout(() => {
+          window.open(mailtoLink, "_self");
+        }, 100);
+      });
     });
-  });
   </script>
 
   <script type="application/ld+json">

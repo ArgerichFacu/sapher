@@ -831,13 +831,24 @@ section + section {
 /* Responsive */
 @media (max-width: 768px) {
   .slide img { height: 45vh; }
-  .prev, .next { font-size: 1.2rem; padding: 8px 10px; }
+  .prev, .next { 
+    font-size: 1.2rem; 
+    padding: 8px 10px; 
+  }
 }
 
 @media (max-width: 480px) {
-  .slide img { height: 40vh; }
-  .prev, .next { font-size: 1rem; padding: 6px 8px; }
-  .dots span { height: 8px; width: 8px; }
+  .slide img { 
+    height: 40vh; 
+  }
+  .prev, .next { 
+    font-size: 1rem; 
+    padding: 6px 8px; 
+  }
+  .dots span { 
+    height: 8px; 
+    width: 8px; 
+  }
 }
 
 /* ========================================================= */
